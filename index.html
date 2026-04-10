@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>London Trip | Full Planner</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root { --primary: #ff4757; --accent: #2f3542; --bg: #f1f2f6; --halal: #2ed573; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--accent); }
+
+header { background: #000; color: #fff; padding: 60px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=2070'); background-size: cover; background-position: center; }
+header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; }
+
+.nav-tabs { display: flex; justify-content: center; gap: 10px; margin: -30px auto 30px; overflow-x: auto; padding: 10px; }
+.tab-btn { padding: 15px 25px; border: none; border-radius: 50px; background: white; cursor: pointer; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s; white-space: nowrap; }
+.tab-btn.active { background: var(--primary); color: white; }
+
+.content { max-width: 900px; margin: 0 auto; padding: 0 20px 100px; }
+.tab-pane { display: none; animation: slideIn 0.4s ease; }
+.tab-pane.active { display: block; }
+
+.card { background: white; padding: 25px; border-radius: 20px; margin-bottom: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.day-title { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--bg); padding-bottom: 15px; margin-bottom: 20px; }
+
+.map-frame { width: 100%; height: 350px; border-radius: 15px; border: none; margin-top: 15px; background: #eee; }
+
+.food-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f1f1f1; }
+.halal-badge { color: var(--halal); font-size: 0.8rem; font-weight: bold; border: 1px solid var(--halal); padding: 2px 6px; border-radius: 4px; }
+
+@keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+
+<header>
+<h1>London Calling 🇬🇧</h1>
+<p>Itinéraire Complet & Adresses Gourmandes</p>
+</header>
+
+<div class="nav-tabs">
+<button class="tab-btn active" onclick="openTab(event, 'days')">📅 Itinéraire</button>
+<button class="tab-btn" onclick="openTab(event, 'food')">🍰 Food & Brunch</button>
+<button class="tab-btn" onclick="openTab(event, 'budget')">💰 Budget Détail</button>
+</div>
+
+<div class="content">
+
+<div id="days" class="tab-pane active">
+<div class="card">
+<div class="day-title"><h2>JOUR 1 : Soirée Chill</h2> <span>🌇</span></div>
+<p><strong>Programme :</strong> Covent Garden (ambiance) → Leicester Square → Piccadilly Circus (écrans de nuit).</p>
+<p>🍴 <strong>Dîner :</strong> Dishoom ou Halal Guys.</p>
+<iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9931.536489396348!2d-0.1367!3d51.51!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604d49f4b7941%3A0x2604c3127161e1f!2sPiccadilly%20Circus!5e0!3m2!1sfr!2suk!4v1710000000000"></iframe>
+</div>
+
+<div class="card">
+<div class="day-title"><h2>JOUR 2 : Iconique & Sunset</h2> <span>🎡</span></div>
+<p><strong>Matin :</strong> Big Ben, Westminster Abbey, Parlement (📸 Spot : Westminster Bridge).</p>
+<p><strong>Midi :</strong> London Eye (Réserver fin de journée pour la lumière).</p>
+<p><strong>Après-midi :</strong> British Museum (Momies, Rosette - 3h max).</p>
+<p><strong>Coucher du soleil :</strong> Primrose Hill (Vue panoramique).</p>
+<iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9933.2486749666!2d-0.1246!3d51.5007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604c38c8cd1d9%3A0x48839974e83f5!2sBig%20Ben!5e0!3m2!1sfr!2suk!4v1710000000001"></iframe>
+</div>
+
+<div class="card">
+<div class="day-title"><h2>JOUR 3 : Marché & Shopping</h2> <span>🛍️</span></div>
+<p><strong>Matin :</strong> Camden Market (Street food & vibes).</p>
+<p><strong>Midi :</strong> Poppies Fish & Chips (Camden) ou The Golden Hind.</p>
+<p><strong>Après-midi :</strong> Oxford St, Regent St, Soho.</p>
+<p>🍴 <strong>Dîner :</strong> Roti King ou Maroush.</p>
+<iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4963.856!2d-0.142!3d51.541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ae09299499d%3A0x677b102919323c6d!2sCamden%20Market!5e0!3m2!1sfr!2suk!4v1710000000002"></iframe>
+</div>
+
+<div class="card">
+<div class="day-title"><h2>JOUR 4 : Notting Hill</h2> <span>🌈</span></div>
+<p><strong>Matin :</strong> Notting Hill (Maisons colorées) OU Hyde Park (Chill).</p>
+<p><strong>Départ :</strong> Train vers Luton à St Pancras vers 16h max.</p>
+</div>
+</div>
+
+<div id="food" class="tab-pane">
+<div class="card">
+<h3>🍳 Top Brunch & Boulangeries</h3>
+<div class="food-item"><span><strong>Ole & Steen</strong> (Social Square - Soho)</span> <span class="tag">Leur Cinnamon Social est mythique</span></div>
+<div class="food-item"><span><strong>EL&N</strong> (Hans Crescent - Knightsbridge)</span> <span class="tag">Plus beau café du monde</span></div>
+<div class="food-item"><span><strong>L'Éto Caffe</strong> (Wardour St)</span> <span class="tag">Gâteaux incroyables</span></div>
+<div class="food-item"><span><strong>Eggbreak</strong> (Notting Hill)</span> <span class="tag">Le temple de l'oeuf</span></div>
+<div class="food-item"><span><strong>Bread Ahead</strong> (Borough Market)</span> <span class="tag">Beignets à tomber</span></div>
+</div>
+
+<div class="card">
+<h3>🍔 Fast-Food & Restos Halal</h3>
+<div class="food-item"><span><strong>Sides by Sidemen</strong> (Wembley/Dalston)</span> <span class="halal-badge">HALAL</span></div>
+<div class="food-item"><span><strong>BIRD</strong> (Canary Wharf/Soho)</span> <span class="halal-badge">HALAL</span></div>
+<div class="food-item"><span><strong>Phat Buns</strong> (Bayswater)</span> <span class="halal-badge">HALAL</span></div>
+<div class="food-item"><span><strong>Vurger Co</strong> (Shoreditch)</span> <span class="tag">Vegan (Safe)</span></div>
+</div>
+</div>
+
+<div id="budget" class="tab-pane">
+<div class="card">
+<h3>Détail du Budget par Personne</h3>
+<table style="width:100%; border-collapse: collapse; margin-top:20px;">
+<tr style="border-bottom: 2px solid #eee;"> <th align="left">Poste</th> <th align="right">Est.</th> </tr>
+<tr><td>Transports (Cap Journalier Zone 1-2)</td><td align="right">£34 (£8.50/jour)</td></tr>
+<tr><td>Luton Express (A/R)</td><td align="right">£35</td></tr>
+<tr><td>London Eye (Standard)</td><td align="right">£35</td></tr>
+<tr><td>Repas Middi (Street Food/Fish&Chips)</td><td align="right">£60 (£15/j)</td></tr>
+<tr><td>Repas Soir (Dishoom, Maroush, etc)</td><td align="right">£120 (£30/j)</td></tr>
+<tr><td>Snacks, Brunchs & Cafés</td><td align="right">£50</td></tr>
+<tr style="font-weight:bold; font-size:1.2rem; color:var(--primary);">
+<td>TOTAL HORS VOL/HOTEL</td>
+<td align="right">~ £334</td>
+</tr>
+</table>
+<p style="margin-top:20px; font-size:0.9rem; color:#666;"><em>Astuce : Utilisez votre carte Revolut ou Contactless pour économiser sur les frais bancaires !</em></p>
+</div>
+</div>
+
+</div>
+
+<script>
+function openTab(evt, tabName) {
+var i, tabContent, tabBtns;
+tabContent = document.getElementsByClassName("tab-pane");
+for (i = 0; i < tabContent.length; i++) {
+tabContent[i].classList.remove("active");
+}
+tabBtns = document.getElementsByClassName("tab-btn");
+for (i = 0; i < tabBtns.length; i++) {
+tabBtns[i].classList.remove("active");
+}
+document.getElementById(tabName).classList.add("active");
+evt.currentTarget.classList.add("active");
+}
+</script>
+
+</body>
+</html>
+
